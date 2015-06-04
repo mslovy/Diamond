@@ -160,10 +160,11 @@ class RbdImageUsageCollector(diamond.collector.Collector):
             return None
         
         rbd_to_username = {}
-        for rbd_link in os.listdir("/dev/rbd/rbd/"):
-            username = rbd_link
-            rbdname = os.path.basename(os.path.realpath("/dev/rbd/rbd/"+rbd_link))
-            rbd_to_username[rbdname] = username
+        if os.path.exists("/dev/rbd/rbd/"):
+            for rbd_link in os.listdir("/dev/rbd/rbd/"):
+                username = rbd_link
+                rbdname = os.path.basename(os.path.realpath("/dev/rbd/rbd/"+rbd_link))
+                rbd_to_username[rbdname] = username
         for key, info in results.iteritems():
             metrics = {}
             name = info['device']

@@ -160,12 +160,13 @@ class CacheImageUsageCollector(diamond.collector.Collector):
             return None
         
         dm_to_username = {}
-        for mapper_link in os.listdir("/dev/mapper/"):
-            if (mapper_link == "control"):
-                continue
-            username = mapper_link
-            dmname = os.path.basename(os.path.realpath("/dev/mapper/"+mapper_link))
-            dm_to_username[dmname] = username
+        if os.path.exists("/dev/mapper/"):
+            for mapper_link in os.listdir("/dev/mapper/"):
+                if (mapper_link == "control"):
+                    continue
+                username = mapper_link
+                dmname = os.path.basename(os.path.realpath("/dev/mapper/"+mapper_link))
+                dm_to_username[dmname] = username
         for key, info in results.iteritems():
             metrics = {}
             name = info['device']
