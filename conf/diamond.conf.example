@@ -174,29 +174,32 @@ batch = 100
 # instance_prefix = instances
 
 # Default Poll Interval (seconds)
-# interval = 300
+interval = 10
 
 ################################################################################
 # Default enabled collectors
 ################################################################################
 
-[[CPUCollector]]
-enabled = True
+#[[CPUCollector]]
+#enabled = True
 
-[[DiskSpaceCollector]]
-enabled = True
+#[[DiskSpaceCollector]]
+#enabled = True
 
-[[DiskUsageCollector]]
-enabled = True
+#[[DiskUsageCollector]]
+#enabled = True
 
-[[LoadAverageCollector]]
-enabled = True
+[[RbdImageUsageCollector]]
+enable = True
 
-[[MemoryCollector]]
-enabled = True
+#[[LoadAverageCollector]]
+#enabled = True
 
-[[VMStatCollector]]
-enabled = True
+#[[MemoryCollector]]
+#enabled = True
+
+#[[VMStatCollector]]
+#enabled = True
 
 ################################################################################
 ### Options for logging
