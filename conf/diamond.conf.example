@@ -190,7 +190,10 @@ interval = 10
 #enabled = True
 
 [[RbdImageUsageCollector]]
-enable = True
+enabled = True
+
+[[CacheImageUsageCollector]]
+enabled = True
 
 #[[LoadAverageCollector]]
 #enabled = True
