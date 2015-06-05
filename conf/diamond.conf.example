@@ -54,7 +54,7 @@ days = 7
 ### Options for GraphiteHandler
 
 # Graphite server host
-host = 127.0.0.1
+host = 172.18.11.65
 
 # Port to send metrics to
 port = 2003
@@ -69,7 +69,7 @@ batch = 1
 ### Options for GraphitePickleHandler
 
 # Graphite server host
-host = 127.0.0.1
+host = 172.18.11.65
 
 # Port to send metrics to
 port = 2004
@@ -158,7 +158,7 @@ batch = 100
 # shell             = Run the string set in hostname as a shell command and use its
 #                     output(with spaces trimmed off from both ends) as the hostname.
 
-# hostname_method = smart
+hostname_method = hostname
 
 # Path Prefix and Suffix
 # you can use one or both to craft the path where you want to put metrics
