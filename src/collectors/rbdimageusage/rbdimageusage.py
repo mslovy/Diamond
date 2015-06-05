@@ -198,7 +198,11 @@ class RbdImageUsageCollector(diamond.collector.Collector):
                             metric_name,
                             value,
                             self.MAX_VALUES[key],
-                            time_delta=False)
+                            time_delta=False,
+                            interval=None,
+                            allow_negative=False, 
+                            instance=None, 
+                            need_rollover=False)
                     else:
                         metric_value = value
 

@@ -424,7 +424,8 @@ class Collector(object):
 
     def derivative(self, name, new, max_value=0,
                    time_delta=True, interval=None,
-                   allow_negative=False, instance=None):
+                   allow_negative=False, instance=None,
+                   need_rollover=True):
         """
         Calculate the derivative of the metric.
         """
@@ -435,7 +436,10 @@ class Collector(object):
             old = self.last_values[path]
             # Check for rollover
             if new < old:
-                old = old - max_value
+                if need_rollover:
+                    old = old - max_value
+                else:
+                    old = 0
             # Get Change in X (value)
             derivative_x = new - old
 
